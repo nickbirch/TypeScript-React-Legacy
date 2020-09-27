@@ -65,9 +65,9 @@ getLocation() {
 
 fetchWeather() {
 
-    const { latitude, longitude } = this.state.position
-    const key: string = '78fbc960a755ce0d1c3097d6e8f3e941'
-    const weatherURL: string = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`
+    const { latitude, longitude } = this.state.position;
+    const key: string = `${process.env.REACT_APP_KEY}`;
+    const weatherURL: string = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
 
     fetch(weatherURL)
     .then(res =>res.json())
